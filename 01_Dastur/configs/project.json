@@ -1,0 +1,27 @@
+{
+  "team": "Yuksava",
+  "members": [
+    {
+      "name": "Marufov Ozodbek",
+      "role": "Captain",
+      "email": "marufovozodbek64@gmail.com",
+      "portfolio": ""
+    },
+    {
+      "name": "Muharramxon Alixonova",
+      "role": "UI/UX designer",
+      "email": "alixonovamuharramxon45@gmail.com",
+      "portfolio": ""
+    },
+    {
+      "name": "Abdubannopova Oydinoy",
+      "role": "Data analytics, researcher",
+      "email": "o3939043@gmail.com",
+      "portfolio": ""
+    }
+  ],
+  "repository": "",
+  "website": "",
+  "weights_url": "",
+  "revision": ""
+}
