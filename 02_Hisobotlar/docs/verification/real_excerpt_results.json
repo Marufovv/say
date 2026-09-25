@@ -1,0 +1,58 @@
+[
+  {
+    "name": "C3902_first10s.mp4",
+    "seconds": 10.01,
+    "tracks": 69,
+    "model_seconds": 3.568,
+    "ratio": 0.356,
+    "candidate_events": 1,
+    "alignment": {
+      "status": "matched",
+      "matches": 79,
+      "inliers": 61,
+      "inlier_ratio": 0.772
+    }
+  },
+  {
+    "name": "C3896_first10s.mp4",
+    "seconds": 10.01,
+    "tracks": 70,
+    "model_seconds": 3.585,
+    "ratio": 0.358,
+    "candidate_events": 2,
+    "alignment": {
+      "status": "matched",
+      "matches": 1918,
+      "inliers": 1901,
+      "inlier_ratio": 0.991
+    }
+  },
+  {
+    "name": "C3905_first10s.mp4",
+    "seconds": 10.01,
+    "tracks": 70,
+    "model_seconds": 3.629,
+    "ratio": 0.363,
+    "candidate_events": 1,
+    "alignment": {
+      "status": "matched",
+      "matches": 101,
+      "inliers": 88,
+      "inlier_ratio": 0.871
+    }
+  },
+  {
+    "name": "C3897_first10s.mp4",
+    "seconds": 10.01,
+    "tracks": 51,
+    "model_seconds": 3.645,
+    "ratio": 0.364,
+    "candidate_events": 1,
+    "alignment": {
+      "status": "matched",
+      "matches": 688,
+      "inliers": 660,
+      "inlier_ratio": 0.959
+    }
+  }
+]

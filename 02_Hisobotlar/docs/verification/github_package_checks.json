@@ -1,0 +1,31 @@
+{
+  "team_members": [
+    {
+      "name": "Marufov Ozodbek",
+      "role": "Captain",
+      "email": "marufovozodbek64@gmail.com",
+      "portfolio": ""
+    },
+    {
+      "name": "Muharramxon Alixonova",
+      "role": "UI/UX designer",
+      "email": "alixonovamuharramxon45@gmail.com",
+      "portfolio": ""
+    },
+    {
+      "name": "Abdubannopova Oydinoy",
+      "role": "Data analytics, researcher",
+      "email": "o3939043@gmail.com",
+      "portfolio": ""
+    }
+  ],
+  "restored_demo_videos": 4,
+  "restored_demo_jobs": 6,
+  "video_range_requests": "PASS",
+  "fresh_model_inference_frames": 300,
+  "fresh_model_runtime_sec": 3.326,
+  "model_sha256": "c5c2d13e59ae883e6af3b45daea64af4833a4951c92d116ec270d9ddbe998063",
+  "unit_tests": 19,
+  "github_ci": "not_run",
+  "docker": "not_tested_no_docker_installed"
+}

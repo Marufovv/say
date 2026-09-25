@@ -1,0 +1,17 @@
+{
+  "official_format": {
+    "exit_code": 0,
+    "stdout": "format: 1 video(s), 0 event(s), 0 error(s), 0 warning(s) -> VALID\n",
+    "stderr": ""
+  },
+  "official_harness": {
+    "exit_code": 0,
+    "stdout": "[QA_BASKETBALL_NOT_WIUT.mp4] 4.0s @ 10.00 fps, budget 12s\n[QA_BASKETBALL_NOT_WIUT.mp4] 0 events, 40 risk samples, 1.4s \u2014 OK\nwrote /Users/iiozodbek/Documents/Codex/2026-09-24/referenced-chatgpt-conversation-this-is-an/outputs/wiut_cv_app/docs/verification/official_harness_qa.json\n",
+    "stderr": ""
+  },
+  "rule_tests": {
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "test_congestion_all_lanes_required (test_rules.Rules.test_congestion_all_lanes_required) ... ok\ntest_crossing_excludes_jaywalking (test_rules.Rules.test_crossing_excludes_jaywalking) ... ok\ntest_invalid_scene (test_rules.Rules.test_invalid_scene) ... ok\ntest_jaywalking (test_rules.Rules.test_jaywalking) ... ok\ntest_obstacle_animal (test_rules.Rules.test_obstacle_animal) ... ok\ntest_risk_prefix_and_reset (test_rules.Rules.test_risk_prefix_and_reset) ... ok\ntest_scene_guard (test_rules.Rules.test_scene_guard) ... ok\ntest_stationary_10s_backdated_and_queue_excluded (test_rules.Rules.test_stationary_10s_backdated_and_queue_excluded) ... ok\ntest_track_determinism (test_rules.Rules.test_track_determinism) ... ok\ntest_union_no_global_min_duration (test_rules.Rules.test_union_no_global_min_duration) ... ok\ntest_wrong_way (test_rules.Rules.test_wrong_way) ... ok\ntest_yield_requires_movement_and_persists_until_exit (test_rules.Rules.test_yield_requires_movement_and_persists_until_exit) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.001s\n\nOK\n"
+  }
+}
