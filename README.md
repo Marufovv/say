@@ -5,8 +5,8 @@ WIUT CV loyihasi: mahalliy video tahlili, jonli kompyuter/USB kamera, hodisa ann
 | Jamoa a’zosi | Vazifasi | Email |
 |---|---|---|
 | Marufov Ozodbek | Captain | marufovozodbek64@gmail.com |
-| Muharramxon Alixonova | UI/UX designer | alixonovamuharramxon45@gmail.com |
-| Abdubannopova Oydinoy | Data analytics, researcher | o3939043@gmail.com |
+| Muharramxon Alixonova | Data analytics, researcher | alixonovamuharramxon45@gmail.com |
+| Abdubannopova Oydinoy | UI/UX designer | o3939043@gmail.com |
 
 ## GitHub’ga yuklash
 
