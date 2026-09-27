@@ -1,0 +1,140 @@
+name: Yuksava - repair and verify
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/yuksava-fix.yml']
+permissions:
+  contents: write
+concurrency:
+  group: yuksava-repair
+  cancel-in-progress: false
+jobs:
+  repair:
+    if: github.repository == 'Marufovv/say'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Copy uploaded groups to submission root
+        run: |
+          python - <<'PYCODE'
+          """Copy the six uploaded groups into the required repository root, without deleting originals."""
+          import hashlib,json,shutil
+          from pathlib import Path
+          
+          GROUPS=['01_Dastur','02_Hisobotlar','03_Natijalar','04_Videolar','05_Model_1','06_Model_2']
+          OFFICIAL={'run_submission.py':'a47b494afae14432a65166b43cd5f2a278408ce661aecf0fb86b6fa05a06c204', 'evaluate.py':'111c6fa04709c9f1df4ea3db4bede749953b2c27bdc5679c2ef56794637573b5'}
+          
+          def normalize(root):
+              root=Path(root).resolve();copies={}
+              if not (root/'01_Dastur/app.py').is_file():raise RuntimeError('01_Dastur/app.py topilmadi. Noto‘g‘ri repository.')
+              # Validate the complete plan before changing any destination.
+              for group in GROUPS:
+                  folder=root/group
+                  if not folder.is_dir():raise RuntimeError(group+' yuklanmagan.')
+                  for p in folder.rglob('*'):
+                      if p.is_symlink():raise RuntimeError('Kutilmagan symlink: '+str(p))
+                      if not p.is_file():continue
+                      rel=p.relative_to(folder)
+                      if any(x in rel.parts for x in ['.git','.local','.venv','__pycache__']):continue
+                      if rel.as_posix()=='Dockerfile':continue  # Root container is written explicitly below.
+                      if rel in copies and p.read_bytes()!=copies[rel].read_bytes():raise RuntimeError('Guruhlar orasida konflikt: '+str(rel))
+                      dest=root/rel
+                      if dest.exists() and (not dest.is_file() or (rel.as_posix()!='configs/project.json' and dest.read_bytes()!=p.read_bytes())):
+                          raise RuntimeError('Mavjud ildiz fayli farq qiladi, ustiga yozilmadi: '+str(rel))
+                      copies[rel]=p
+              for name,sha in OFFICIAL.items():
+                  if hashlib.sha256(copies[Path(name)].read_bytes()).hexdigest()!=sha:raise RuntimeError('Rasmiy skript o‘zgargan: '+name)
+              for rel,p in copies.items():
+                  dest=root/rel;dest.parent.mkdir(parents=True,exist_ok=True)
+                  if not dest.exists():shutil.copy2(p,dest)
+              config=root/'configs/project.json';project=json.loads(config.read_text())
+              for key,url in {'repository':'https://github.com/Marufovv/say','website':'https://marufovv.github.io/say/','weights_url':'https://github.com/Marufovv/say/tree/main/weights'}.items():
+                  if not project.get(key):project[key]=url
+              config.write_text(json.dumps(project,ensure_ascii=False,indent=2))
+              (root/'Dockerfile').write_text('''FROM python:3.12-slim
+          WORKDIR /app
+          COPY requirements.txt .
+          RUN pip install --no-cache-dir -r requirements.txt
+          COPY . .
+          RUN python weights/download.py
+          ENV PYTHONUNBUFFERED=1 YUKSAVA_READ_ONLY_SETTINGS=1
+          EXPOSE 8765
+          CMD ["python", "scripts/serve.py"]
+          ''')
+              for name,text in {
+                  '.gitignore':'.venv/\n.local/\n__pycache__/\n*.pyc\n.env\n.DS_Store\nweights/yolox_s.onnx\nweights/*.partial\n',
+                  '.dockerignore':'.git\n.local\n.venv\n__pycache__\n.env\n01_Dastur\n02_Hisobotlar\n03_Natijalar\n04_Videolar\n05_Model_1\n06_Model_2\n',
+                  '.nojekyll':''}.items():
+                  if not (root/name).exists():(root/name).write_text(text)
+              paths=[p.as_posix() for p in copies]+['Dockerfile','.gitignore','.dockerignore','.nojekyll','NIZOM_HOLATI.md']
+              (root/'NIZOM_HOLATI.md').write_text('''# Yuksava: topshirish holati
+          
+          Repository tuzilishi: solution.py, run_submission.py, evaluate.py, requirements.txt, README.md, src, weights, samples, docs ildizda. Asl 01–06 papkalar saqlanadi; GitHub Pages ulardagi saqlangan natijalarni ochadi. Rasmiy skriptlar o‘zgartirilmaydi. Model yig‘ilganda SHA256 tekshiriladi.
+          
+          ## Bajarilgan yoki tekshirishga tayyor
+          - Uch jamoa a’zosi, vazifalari va email kontaktlari saqlangan.
+          - Haqiqiy video upload va tahlil qiladigan Python dasturi bor; Dockerfile uni serverda ishga tushiradi.
+          - 14 event ta’rifi va qo‘lda tekshirish oynasi; 6 dastlabki avtomatik qoida. Nizom CLASSES ro‘yxatini qisqartirishga ruxsat beradi. Part B ixtiyoriy nol baseline.
+          - Bir sinf segmentlari birlashtiriladi; vaqtlar video chegarasida.
+          - 4 ta 10.01 soniyali haqiqiy parcha va ularning EDA/natijalari mavjud.
+          - GitHub Actions birlik testlari va o‘zgarmagan harness/validatorni bajaradi. CI muvaffaqiyati hidden-test aniqligi degani emas.
+          
+          ## Hali yakunlanmagan majburiy ishlar
+          1. To‘liq 4 original sample videosining EDA, vizualizatsiya va predictions_samples.json natijasi. Parcha natijasini shu nom bilan yashirish mumkin emas.
+          2. Internetdan yangi video yuklab tahlil qilinadigan public Python/Docker server va butun hakamlik davrida ishlashi. GitHub Pages bunga yetmaydi.
+          3. T4 sinfi 16 GB GPU / 8 CPU / 32 GB RAM sharoitida A+B ≤3× va xotira o‘lchovi.
+          4. Yakuniy commit/tagni topshirishda qayd etish va jamoa portfolio havolalarini to‘ldirish.
+          
+          ## Aniqlashtirish va model chegaralari
+          - samples/camera.md berilmagan; signal va huquqiy taqiqlar uydirilmaydi.
+          - 8 sinf uchun avtomatik detektor yo‘q. Mavjud 6 qoida ham evristik, sifatini belgilangan ground truth bilan tekshirish kerak.
+          - Haqiqiy hidden-test F1 yoki tanlov balli o‘lchanmagan. To‘liq nizomga mos tayyor topshirish deb e’lon qilinmaydi.
+          
+          ## Hosting
+          GitHub repo → Docker/Python Web Service. Root Directory bo‘sh, Dockerfile Path `./Dockerfile`, health `/api/health`. Server `PORT` ni o‘qiydi. Doimiy disk uchun `YUKSAVA_DATA_DIR` sozlanadi. GitHub Pages `index.html` ko‘rish rejimini saqlaydi. Docker build mahalliy Docker bo‘lmasa sinalmagan; hostingdagi log tekshirilishi kerak.
+          ''')
+              return sorted(set(paths))
+          
+          
+          import subprocess
+          paths=normalize('.')
+          subprocess.run(['git','add','--',*paths],check=True)
+          PYCODE
+      - name: Install and assemble verified local model
+        run: |
+          python -m pip install -r requirements-dev.txt
+          python weights/download.py
+      - name: Unit tests and real-excerpt official harness
+        run: |
+          python -m unittest discover -s tests -v
+          python run_submission.py --videos samples/excerpts --team Yuksava --out /tmp/yuksava_ci_predictions.json
+          python evaluate.py --pred /tmp/yuksava_ci_predictions.json --validate-only
+          python - <<'PYCODE'
+          import json
+          p=json.load(open('/tmp/yuksava_ci_predictions.json'))
+          assert len(p['videos'])==4, 'Expected all four real excerpts'
+          for name,entry in p['log'].items():
+              assert not entry['errors'], (name,entry['errors'])
+          for name,entry in p['videos'].items():
+              assert len(entry['risk'])==300, (name,'incomplete frame coverage')
+          PYCODE
+      - name: Save tested correction to main
+        run: |
+          if ! git diff --cached --quiet; then
+            git config user.name 'github-actions[bot]'
+            git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+            git commit -m 'Fix Yuksava root layout and preserve original uploads'
+            git push origin HEAD:main
+          fi
+      - name: Keep exact test predictions
+        uses: actions/upload-artifact@v4
+        with:
+          name: yuksava-real-excerpt-predictions
+          path: /tmp/yuksava_ci_predictions.json
