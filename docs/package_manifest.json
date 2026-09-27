@@ -1,0 +1,187 @@
+[
+  {
+    "file": "run_submission.py",
+    "bytes": 8629,
+    "sha256": "a47b494afae14432a65166b43cd5f2a278408ce661aecf0fb86b6fa05a06c204"
+  },
+  {
+    "file": "requirements.txt",
+    "bytes": 109,
+    "sha256": "3559775db67eaebb3629dd7671393dc713aa9d69af3a28a01b2c69f8da1fd53b"
+  },
+  {
+    "file": "start.command",
+    "bytes": 331,
+    "sha256": "0b56f4f100e21fe1040f2622126f33593001188f486665d9b9762e43214a740f"
+  },
+  {
+    "file": "Dockerfile",
+    "bytes": 197,
+    "sha256": "b49b326e252a93dac9782a0af8a65f8787a737d02e65e29af198740dda9fc435"
+  },
+  {
+    "file": "solution.py",
+    "bytes": 622,
+    "sha256": "9c9e87d626022139d21d0742df0c1f7e166e2ae6ffd2bdc95219fa53761f081e"
+  },
+  {
+    "file": "start.bat",
+    "bytes": 348,
+    "sha256": "dddfcaae9541838182d2d6fd143ab4714d330a11847a91717995fe99df423ac5"
+  },
+  {
+    "file": "README.md",
+    "bytes": 10048,
+    "sha256": "cf7d11c12311ef062a17d75bc0a383c1c978ecded6a810e747754972e40df153"
+  },
+  {
+    "file": ".dockerignore",
+    "bytes": 58,
+    "sha256": "aa6250128cb1bf00abe4e881e5b77848df7ae4338ac4d9b46915e0478fd230e9"
+  },
+  {
+    "file": ".gitignore",
+    "bytes": 62,
+    "sha256": "63736368056361f4617720ea605b711fe20adb16a1bfcd7beb27cf1d8b5faf52"
+  },
+  {
+    "file": "app.py",
+    "bytes": 8556,
+    "sha256": "7dc3aba7b93295f265bdacfb0291ffdb28408456cc44ed2f22610e9dd1238c88"
+  },
+  {
+    "file": "evaluate.py",
+    "bytes": 18950,
+    "sha256": "111c6fa04709c9f1df4ea3db4bede749953b2c27bdc5679c2ef56794637573b5"
+  },
+  {
+    "file": "requirements-lock-macos.txt",
+    "bytes": 305,
+    "sha256": "16cb9b8ab337840decfeafd13c781840b0cf78751ceac7eb145e084af63e3de4"
+  },
+  {
+    "file": "NOTICE.md",
+    "bytes": 1509,
+    "sha256": "50fb26c8c02f7a7d3a968e416ee9a89f5eefeb3e900c38aa396b6a63d87e74a2"
+  },
+  {
+    "file": "web/index.html",
+    "bytes": 10579,
+    "sha256": "bbb946af793a5b11002f2e15f3d28a38b09719a6fd5b4bd88b5ec9e1c67507a0"
+  },
+  {
+    "file": "web/style.css",
+    "bytes": 12334,
+    "sha256": "652942d89a810534d1d3dd2e12f4a22661c69cdab13f941c82f33b4b083784ac"
+  },
+  {
+    "file": "web/app.js",
+    "bytes": 20748,
+    "sha256": "c6e75aeada633fd34e90ed0e6011cc92cb6dc81e6d563f03d9fc33db73d5e718"
+  },
+  {
+    "file": "weights/download.py",
+    "bytes": 935,
+    "sha256": "44c9f41345cc8c9c09b70ac8870324e986a61d0fbebd6a3c149d21a16406bf9e"
+  },
+  {
+    "file": "weights/yolox_s.onnx",
+    "bytes": 35858002,
+    "sha256": "c5c2d13e59ae883e6af3b45daea64af4833a4951c92d116ec270d9ddbe998063"
+  },
+  {
+    "file": "weights/download.sh",
+    "bytes": 59,
+    "sha256": "6d865c7dab00a8ccd2d0d1ceecff3d57ac85c5d39770aedc263067e51a9e7fae"
+  },
+  {
+    "file": "weights/LICENSE-YOLOX.txt",
+    "bytes": 11371,
+    "sha256": "0ec3668d3274bcf29e8a29e9576d5a2cd96fc78d3c5bec4387355a796e5d9088"
+  },
+  {
+    "file": "tests/test_rules.py",
+    "bytes": 3959,
+    "sha256": "cfbf8c63cdba2256d0924de81369346585016170aec6094c0758d0011a71b225"
+  },
+  {
+    "file": "docs/manifest.json",
+    "bytes": 430,
+    "sha256": "2e946b4a1e6e380516f3abbad34959b6102e0e9729a7bdaea3eae017f0a96a48"
+  },
+  {
+    "file": "samples/README.md",
+    "bytes": 137,
+    "sha256": "65f0e3f9d8fafc8526a48106679df450610b763f2cd1e418859efac37f326baa"
+  },
+  {
+    "file": "configs/scene.json",
+    "bytes": 214,
+    "sha256": "d0b564802ce735c48112866a18e38ddca4aa485f95d71bf8a3ff56e502e007af"
+  },
+  {
+    "file": "scripts/start.py",
+    "bytes": 711,
+    "sha256": "712fdd938a58043dba5d7090ae279769eacfb5e6968d7f3d84c2fb61203be1b8"
+  },
+  {
+    "file": "scripts/analyze.py",
+    "bytes": 1170,
+    "sha256": "5fd304ff879cec47d560c4deb3c34bb9cfe9e67da79fa33ad802d521c623bc3d"
+  },
+  {
+    "file": "src/detector.py",
+    "bytes": 2632,
+    "sha256": "ccc886ad26ae718b77f116fadc1014c79e741c651688d13f1c702fdbf00a6c58"
+  },
+  {
+    "file": "src/events.py",
+    "bytes": 4991,
+    "sha256": "35be128a455678facbc6a99d6d85b622dc3bc47a2647aad958ed59e3731ca203"
+  },
+  {
+    "file": "src/__init__.py",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "file": "src/scene.py",
+    "bytes": 2907,
+    "sha256": "40662ff76f2c988943d11b88d462ddbf2ed831dcb7fdbfb2447fc9bcd72f31e1"
+  },
+  {
+    "file": "src/pipeline.py",
+    "bytes": 5402,
+    "sha256": "5f263499365d284e5656ac10f2dfdac48a0fee12496c1b7f3a783b3934c0e664"
+  },
+  {
+    "file": "src/tracking.py",
+    "bytes": 2860,
+    "sha256": "3516868cb1c9e4902b482a52c844eb7f9e7e1551ee3e143f5a0eb44f2a5ff2c6"
+  },
+  {
+    "file": "docs/verification/summary.json",
+    "bytes": 566,
+    "sha256": "eef75e40c1bd0ce09aac40caccfcc5b6285b32a68bcaf3dee5a87bf8dc305e79"
+  },
+  {
+    "file": "docs/verification/official_harness_qa.json",
+    "bytes": 1572,
+    "sha256": "3a3f7463fdd5a990ce1a4ff4841775a11b708e0ac3798e9444347c6c5505f839"
+  },
+  {
+    "file": "docs/verification/checks.json",
+    "bytes": 1716,
+    "sha256": "b0f592b10372cb3f5b79f228e447838ee1424087e7120a2f32cced7a00c3eab8"
+  },
+  {
+    "file": "docs/verification/http_checks.json",
+    "bytes": 240,
+    "sha256": "910ef611443cb6c6a59928a1e8594c9f42aa6c145df30bc6ad6f78fff79fd8d3"
+  },
+  {
+    "file": "docs/verification/qa_predictions.json",
+    "bytes": 2132,
+    "sha256": "eaabbd73a71260d8c4e7823ed1e56fd6bcf2269c26dbf20c25adede5c1c6b643"
+  }
+]

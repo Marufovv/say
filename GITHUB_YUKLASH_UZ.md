@@ -1,0 +1,1 @@
+ZIPni oching va ichidagi Yuksava_GitHub papkasining tarkibini GitHub repository ildiziga yuklang. Bosqichlar README.md da. GitHub Pages video tahlil serverini ishlatmaydi; Docker/Python hosting kerak. Jamoa ma’lumotlari configs/project.json ichida.

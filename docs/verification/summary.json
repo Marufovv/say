@@ -1,0 +1,18 @@
+{
+  "fixture": "QA_BASKETBALL_NOT_WIUT.mp4; 4 sec repeated OpenCV sample still; NOT road footage or WIUT sample",
+  "upload_via_browser": true,
+  "real_model_inference": true,
+  "unique_tracks": 2,
+  "track_counts": {
+    "person": 2
+  },
+  "sampled_frames": 20,
+  "runtime_sec": 1.364,
+  "duration": 4.0,
+  "runtime_ratio": 0.341,
+  "no_scene_no_events": true,
+  "model_sha256": "c5c2d13e59ae883e6af3b45daea64af4833a4951c92d116ec270d9ddbe998063",
+  "run_submission.py_unchanged": true,
+  "evaluate.py_unchanged": true,
+  "web_and_official_predictions_equal": true
+}

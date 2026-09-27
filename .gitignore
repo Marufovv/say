@@ -1,0 +1,8 @@
+.venv/
+.local/
+__pycache__/
+*.pyc
+.env
+.DS_Store
+weights/yolox_s.onnx
+weights/*.partial

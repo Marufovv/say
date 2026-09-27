@@ -1,0 +1,45 @@
+{
+  "C3905_first10s.mp4": {
+    "alignment": {
+      "status": "matched",
+      "matches": 101,
+      "inliers": 88,
+      "inlier_ratio": 0.871
+    },
+    "frames": 300,
+    "job_done": true
+  },
+  "C3902_first10s.mp4": {
+    "alignment": {
+      "status": "matched",
+      "matches": 79,
+      "inliers": 61,
+      "inlier_ratio": 0.772
+    },
+    "frames": 300,
+    "job_done": true
+  },
+  "C3897_first10s.mp4": {
+    "alignment": {
+      "status": "matched",
+      "matches": 688,
+      "inliers": 660,
+      "inlier_ratio": 0.959
+    },
+    "frames": 300,
+    "job_done": true
+  },
+  "C3896_first10s.mp4": {
+    "alignment": {
+      "status": "matched",
+      "matches": 1918,
+      "inliers": 1901,
+      "inlier_ratio": 0.991
+    },
+    "frames": 300,
+    "job_done": true
+  },
+  "run_submission.py": "a47b494afae14432a65166b43cd5f2a278408ce661aecf0fb86b6fa05a06c204",
+  "evaluate.py": "111c6fa04709c9f1df4ea3db4bede749953b2c27bdc5679c2ef56794637573b5",
+  "browser_visual_test": "Blocked: Chromium SIGABRT in sandbox; no visual/browser-camera pass claimed."
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "file": "weights/yolox_s.onnx",
+    "bytes": 35858002,
+    "sha256": "c5c2d13e59ae883e6af3b45daea64af4833a4951c92d116ec270d9ddbe998063"
+  },
+  {
+    "file": "run_submission.py",
+    "bytes": 8629,
+    "sha256": "a47b494afae14432a65166b43cd5f2a278408ce661aecf0fb86b6fa05a06c204"
+  },
+  {
+    "file": "evaluate.py",
+    "bytes": 18950,
+    "sha256": "111c6fa04709c9f1df4ea3db4bede749953b2c27bdc5679c2ef56794637573b5"
+  }
+]

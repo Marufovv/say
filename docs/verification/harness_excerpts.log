@@ -1,0 +1,9 @@
+[C3896_first10s.mp4] 10.0s @ 29.97 fps, budget 30s
+[C3896_first10s.mp4] 2 events, 300 risk samples, 3.7s — OK
+[C3897_first10s.mp4] 10.0s @ 29.97 fps, budget 30s
+[C3897_first10s.mp4] 1 events, 300 risk samples, 3.6s — OK
+[C3902_first10s.mp4] 10.0s @ 29.97 fps, budget 30s
+[C3902_first10s.mp4] 1 events, 300 risk samples, 3.6s — OK
+[C3905_first10s.mp4] 10.0s @ 29.97 fps, budget 30s
+[C3905_first10s.mp4] 1 events, 300 risk samples, 3.7s — OK
+wrote docs/verification/predictions_excerpts_official.json

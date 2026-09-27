@@ -1,0 +1,22 @@
+{
+  "C3896.MP4.jpg": {
+    "status": "matched",
+    "matches": 2500,
+    "inliers": 2500,
+    "inlier_ratio": 1.0
+  },
+  "C3902.MP4.jpg": {
+    "status": "rejected",
+    "reason": "Video tasdiqlangan kameraga mos kelmadi."
+  },
+  "C3897.MP4.jpg": {
+    "status": "matched",
+    "matches": 262,
+    "inliers": 239,
+    "inlier_ratio": 0.912
+  },
+  "C3905.MP4.jpg": {
+    "status": "rejected",
+    "reason": "Video tasdiqlangan kameraga mos kelmadi."
+  }
+}

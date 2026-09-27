@@ -1,0 +1,10 @@
+{
+  "/api/health": 200,
+  "/": 200,
+  "/static/app.js": 200,
+  "/api/videos": 200,
+  "/api/jobs": 200,
+  "cross_origin_blocked": true,
+  "video_range_status": 206,
+  "json_download_disposition": "attachment; filename=\"predictions.json\""
+}
